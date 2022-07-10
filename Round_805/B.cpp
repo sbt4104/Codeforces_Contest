@@ -16,7 +16,6 @@ int main() {
                 if(st.size() > 3) {break;}
                 index++;
             }
-            //cout<<"index: "<<index<<endl;
             ans++;
         }
         cout<<ans<<endl;

@@ -15,7 +15,6 @@ int main() {
             int val=str[index]-'a';
             val++;
             sum += val;
-            //cout<<"val: "<<val<<endl;
             vec[val]++;
         }
         string ans="";
@@ -30,9 +29,7 @@ int main() {
                 vec[index]--;
             }
         }
-        // for(ll index=1; index<=26; index++) {
-        //     cout<<"index: "<<index<<" rem: "<<countRem[index]<<endl;
-        // }
+
         for(ll index=0; index<str.length(); index++) {
             int val=str[index]-'a';
             val++;

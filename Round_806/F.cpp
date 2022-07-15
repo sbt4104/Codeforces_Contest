@@ -7,20 +7,15 @@ int main() {
     cin>>test;
     while(test--) {
         cin>>n;
-        vector<ll> vec(n);
-        vector< pair<ll, ll> > seq;
-        vector<ll> counter(n+1,0);
+        ll ans=0;
+        vector<ll> vec(n), storeLegal;
         for(ll index=0; index<n; index++) {
             cin>>vec[index];
-            if(vec[index] < index+1) {seq.push_back(make_pair(vec[index], index+1));}
+            if(vec[index] >= index+1) {continue;}
+            ans += lower_bound(storeLegal.begin(), storeLegal.end(), vec[index]) - storeLegal.begin();
+            storeLegal.push_back(index+1);
         }
-        n=seq.size();
-        ll count=0, ans=0;
-        for(ll index=0; index<n; index++) {
-            for(ll pos=index+1; pos<n; pos++) {
-                if(seq[pos].first > seq[index].second) {ans++;}
-            }
-        }
+
         cout<<ans<<endl;
     }
     return 0;

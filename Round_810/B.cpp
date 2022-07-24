@@ -41,7 +41,7 @@ int main() {
             index++;
         }
 
-        if(!m%2) {
+        if(m%2==0) {
             cout<<0<<endl;
             continue;
         }

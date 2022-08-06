@@ -168,28 +168,7 @@ int main() {
         ll glans=clock[1][0] - clock[0][0], ans=1e18;
         for(ll j=0; j<n; j++) {
             for(ll i=0; i<2; i++) {
-                // from here you can go either clockwise or anticlockwise
-                //cout<<"i: "<<i<<" j: "<<j<<endl;
-                ans=clock[1][0] - clock[0][0];
-                if(i==0) {
-                    // we are on row 0, we can go clockwise OR go down
-                        if(j+1<n) {
-                            ll t = clock[0][j] - zigzag[0][j];
-                            ll clk = clock[1][j+1] - clock[0][j];
-                            ans = zigzag[0][j] + clk;
-                            if(t<0) {ans -=t;}
-                        }
-                } else {
-                        ll t = anti[0][j] - zigzag[0][j];
-                        ll clk = anti[0][j] - anti[1][j];
-                        ans = zigzag[1][j] + clk;
-                        if(t<0) {ans -=t;}
-                }
-                if(j==0 && i==0) {
-                    ans  = clock[1][0] - clock[0][0];
-                }
-                //cout<<"ans: "<<ans<<endl;
-                glans = min(glans, ans);
+
             }
         }
         cout<<glans<<endl;
